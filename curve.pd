@@ -9,8 +9,8 @@
 #X obj 955 184 tabread array1;
 #X msg 969 284 clear;
 #X obj 955 209 cyclone/sprintf %.6f;
-#X obj 270 324 vsl 30 118 0.25 4 1 0 empty empty slope 3 9 0 10 -258010
--1 -1 8700 1;
+#X obj 242 377 vsl 30 118 0.25 4 1 0 empty empty slope 3 9 0 10 -258010
+-1 -1 9900 1;
 #N canvas 1263 23 615 939 shaper 0;
 #X msg 406 503 0;
 #X obj 382 479 sel 1;
@@ -47,17 +47,17 @@
 #X obj 371 277 f;
 #X obj 111 488 pow~;
 #X obj 174 247 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1.96477 256;
+-262144 -1 -1 2.61102 256;
 #X obj 173 211 * 1;
 #X obj 232 338 *~;
 #X obj 370 318 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.198718 256;
+-262144 -1 -1 0.230769 256;
 #X obj 253 267 phasor~;
 #X obj 260 196 *;
 #X obj 109 72 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 689.062 256;
 #X obj 268 225 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1468.23 256;
+-262144 -1 -1 6890.62 256;
 #X obj 110 563 +~;
 #X obj 107 607 atan~;
 #X obj 262 25 inlet phase;
@@ -123,24 +123,24 @@
 #X connect 26 0 27 0;
 #X connect 27 0 25 0;
 #X connect 27 1 24 2;
-#X restore 298 459 pd shaper;
-#X obj 330 324 vsl 30 118 0.1 10 0 0 empty empty mod 3 9 0 10 -260999
--1 -1 2400 1;
-#X obj 360 324 vsl 30 118 0 0.25 0 0 empty empty mod 3 9 0 10 -260097
--1 -1 9300 1;
-#X obj 53 373 dac~;
-#X floatatom 92 43 5 0 0 0 speed - -;
-#X obj 92 91 phasor~;
-#X obj 146 286 tgl 22 0 empty empty empty 17 7 0 10 -261682 -1 -1 0
+#X restore 270 512 pd shaper;
+#X obj 302 377 vsl 30 118 0.1 10 0 0 empty empty mod 3 9 0 10 -260999
+-1 -1 11700 1;
+#X obj 332 377 vsl 30 118 0 0.25 0 0 empty empty mod 3 9 0 10 -260097
+-1 -1 10800 1;
+#X obj 52 411 dac~;
+#X floatatom 89 85 5 0 0 0 speed - -;
+#X obj 89 133 phasor~;
+#X obj 61 329 tgl 22 0 empty empty empty 17 7 0 10 -261682 -1 -1 1
 1;
-#X obj 155 313 * 0.02;
-#X obj 53 344 *~;
-#X obj 171 242 vsl 32 40 0 0.1 0 0 empty empty empty 0 -9 0 10 -261682
--1 -1 0 1;
-#X obj 171 290 t b f;
-#X floatatom 53 210 5 0 0 0 freq1 - -;
-#X obj 90 183 tabread4~ array1;
-#X obj 368 458 bng 32 250 50 0 empty empty Reset 37 16 0 10 -262144
+#X obj 70 356 * 0.02;
+#X obj 52 382 *~;
+#X obj 86 285 vsl 32 40 0 0.1 0 0 empty empty empty 0 -9 0 10 -261682
+-1 -1 3900 1;
+#X obj 86 333 t b f;
+#X floatatom 52 207 5 0 0 0 freq1 - -;
+#X obj 89 180 tabread4~ array1;
+#X obj 340 511 bng 32 250 50 0 empty empty Reset 37 16 0 10 -262144
 -1 -1;
 #X obj 921 354 text define -k liste;
 #A set usr1 \; 64 \; 0.053911 \; 0.063382 \; 0.073491 \; 0.084228 \;
@@ -189,16 +189,15 @@
 #X connect 7 0 0 1;
 #X connect 8 0 7 1;
 #X connect 9 0 7 0;
-#X restore 53 260 pd simplefm;
-#X obj 53 232 sig~;
-#X floatatom 126 210 5 0 0 1 freq2 - -;
-#X obj 127 232 sig~;
-#X obj 92 67 * 0.01;
-#X obj 300 324 vsl 30 118 0.01 1 1 0 empty empty phase 3 9 0 10 -261715
--1 -1 1900 1;
-#X obj 576 482 bng 32 250 50 0 empty empty empty 17 7 0 10 -257619
+#X restore 52 257 pd simplefm;
+#X obj 52 229 sig~;
+#X floatatom 125 207 5 0 0 1 freq2 - -;
+#X obj 126 229 sig~;
+#X obj 89 109 * 0.01;
+#X obj 272 377 vsl 30 118 0.01 1 1 0 empty empty phase 3 9 0 10 -261715
+-1 -1 0 1;
+#X obj 814 530 bng 32 250 50 0 empty empty empty 17 7 0 10 -257619
 -1 -1;
-#X text 616 489 Press to read from file;
 #X obj 987 505 array define buff1;
 #N canvas 0 23 450 300 load 0;
 #X obj 124 25 inlet;
@@ -216,10 +215,8 @@
 #X connect 6 0 7 0;
 #X connect 7 0 5 0;
 #X connect 7 1 2 0;
-#X restore 576 519 pd load;
-#X obj 92 114 -~ 0.5;
-#X obj 92 138 *~;
-#X obj 91 162 *~ 63;
+#X restore 814 567 pd load;
+#X obj 89 157 *~ 63;
 #X obj 888 85 t b b b b;
 #X obj 1021 96 bng 32 250 50 0 empty empty Normalize 37 16 0 10 -262144
 -1 -1;
@@ -256,15 +253,18 @@
 #X connect 13 0 6 0;
 #X restore 1021 132 pd normalizer;
 #X obj 888 110 delay 100;
-#X text 266 296 1 Play with this;
 #X text 857 20 2 Save file;
-#X text 540 456 3 reload file from here;
+#X text 778 504 3 reload file from here;
 #X text 15 17 listen to simple fm with the enveloppe;
 #X text 930 43 Then rename file curve.txt;
 #X text 931 57 to usr(1 to 4).txt;
+#X text 239 351 or draw on array1;
+#X text 394 435 0;
+#X text 811 26 1;
+#X text 239 334 1 Play with this;
 #X connect 1 1 22 0;
 #X connect 1 2 24 0;
-#X connect 2 0 45 0;
+#X connect 2 0 42 0;
 #X connect 3 0 5 0;
 #X connect 4 0 21 0;
 #X connect 5 0 23 0;
@@ -272,7 +272,7 @@
 #X connect 8 0 7 2;
 #X connect 9 0 7 3;
 #X connect 11 0 36 0;
-#X connect 12 0 42 0;
+#X connect 12 0 41 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 1;
 #X connect 15 0 10 0;
@@ -297,14 +297,11 @@
 #X connect 35 0 32 2;
 #X connect 36 0 12 0;
 #X connect 37 0 7 1;
-#X connect 38 0 41 0;
-#X connect 42 0 43 0;
-#X connect 42 0 43 1;
+#X connect 38 0 40 0;
+#X connect 41 0 19 0;
+#X connect 42 0 45 0;
+#X connect 42 1 26 0;
+#X connect 42 2 4 0;
+#X connect 42 3 44 0;
 #X connect 43 0 44 0;
-#X connect 44 0 19 0;
-#X connect 45 0 48 0;
-#X connect 45 1 26 0;
-#X connect 45 2 4 0;
-#X connect 45 3 47 0;
-#X connect 46 0 47 0;
-#X connect 48 0 1 0;
+#X connect 45 0 1 0;
